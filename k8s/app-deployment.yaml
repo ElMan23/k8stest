@@ -22,30 +22,6 @@ spec:
               value: redis-cluster-ip
             - name: REDIS_PORT
               value: "6379"
-              apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: app-deployment
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      name: app
-  template:
-    metadata:
-      labels:
-        name: app
-    spec:
-      containers:
-        - name: app
-          image: eliamanara/k8sapp
-          ports:
-            - containerPort: 5000
-          env:
-            - name: REDIS_HOST
-              value: redis-cluster-ip
-            - name: REDIS_PORT
-              value: "6379"
             - name: PASSWORD
               valueFrom: 
                 secretKeyRef:

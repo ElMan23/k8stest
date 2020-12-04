@@ -24,3 +24,12 @@ Deploy with Kubernetes:
 ```
 kubectl apply -f k8s
 ```
+
+## Secret
+
+Create a secret in yout Kubernetes cluster with
+```
+kubectl create secret generic mypassword --from-literal PASSWORD=<YOURPASSWORDHERE>
+```
+
+Careful: this will be made public by the application (it's just a way to check the creation and working of secrets, actually, so I stupidly print them).
